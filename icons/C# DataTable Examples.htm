@@ -1,0 +1,327 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0036)http://www.dotnetperls.com/datatable -->
+<HTML><HEAD><META content="IE=7.0000" http-equiv="X-UA-Compatible">
+<TITLE>C# DataTable Examples</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type><LINK 
+rel=canonical href="http://www.dotnetperls.com/datatable"><LINK rel=stylesheet 
+href="C%23%20DataTable%20Examples_files/1.css">
+<META name=description 
+content="This C# tutorial demonstrates the DataTable type.&#10;DataTable stores data in memory from databases.">
+<META name=GENERATOR content="MSHTML 10.00.9200.16540"></HEAD>
+<BODY id=A>
+<H1>C# DataTable</H1><A id=a href="http://www.dotnetperls.com/data"><IMG 
+alt=DataTable src="C%23%20DataTable%20Examples_files/datatable.png" width=240 
+height=187></A>
+<P>Data is read from a database. It is generated in memory from input. 
+<B>DataTable</B> is ideal for storing data from any source. With it we take 
+objects from memory and display the results in controls such as DataGridView.
+<H2>Example</H2><IMG alt=Note src="C%23%20DataTable%20Examples_files/note-2.png" 
+width=130 height=174>
+<P>The DataTable type is a powerful way to store data in memory. You may have 
+fetched this data from a database, or dynamically generated it. We get a 
+DataTable with four columns of type int, string and DateTime.</P><A 
+href="http://www.dotnetperls.com/int">Int</A> <A 
+href="http://www.dotnetperls.com/string">String</A> <A 
+href="http://www.dotnetperls.com/datetime">DateTime</A>
+<P id=y><B id=t>Then:</B> This DataTable could be persisted or displayed, stored 
+in memory as any other object, or with helper methods manipulated.<PRE><B>Program that uses DataTable: C#</B>
+
+using System;
+using System.Data;
+
+class Program
+{
+    static void Main()
+    {
+	<I>//
+	// Get the DataTable.
+	//</I>
+	DataTable table = GetTable();
+	<I>//
+	// Use DataTable here with SQL.
+	//</I>
+    }
+
+    <I>/// &lt;summary&gt;
+    /// This example method generates a DataTable.
+    /// &lt;/summary&gt;</I>
+    static DataTable GetTable()
+    {
+	<I>//
+	// Here we create a DataTable with four columns.
+	//</I>
+	DataTable table = new DataTable();
+	table.Columns.Add("Dosage", typeof(int));
+	table.Columns.Add("Drug", typeof(string));
+	table.Columns.Add("Patient", typeof(string));
+	table.Columns.Add("Date", typeof(DateTime));
+
+	<I>//
+	// Here we add five DataRows.
+	//</I>
+	table.Rows.Add(25, "Indocin", "David", DateTime.Now);
+	table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now);
+	table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now);
+	table.Rows.Add(21, "Combivent", "Janet", DateTime.Now);
+	table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now);
+	return table;
+    }
+}</PRE>
+<P><B>GetTable</B> instantiates a new DataTable reference. It adds four column 
+collections to the DataTable. And it then adds five drug and patient records. We 
+could next assign the DataSource of a Windows Forms control.
+<H2>Example 2</H2>
+<P>This example shows how to insert data from object collections such as List 
+into a DataTable. We then render that table onto the screen with Windows Forms. 
+DataTable helps with the visual display of data.</P><IMG id=n 
+alt="DataTable example screenshot" 
+src="C%23%20DataTable%20Examples_files/datatable-2.png" width=486 
+height=219><IMG alt="Question and answer" 
+src="C%23%20DataTable%20Examples_files/question.png" width=107 height=154>
+<P><B>Why use DataTable here?</B> It makes your DataGridView simpler and easier. 
+You could manually add data to the DataGridView using the Add method. It is 
+better to put the logic in a separate class.
+<P id=y><B id=r>Caution:</B> DataGridView has performance problems with manually 
+adding rows. Using DataTable instead alleviates these.
+<P><B>How to use a DataGridView.</B> Make a new Windows Forms project and add a 
+DataGridView to it. The control will be named dataGridView1 automatically. Its 
+purpose will be rendering the DataTable you will make.</P><IMG alt=Steps 
+src="C%23%20DataTable%20Examples_files/steps.png" width=224 height=129>
+<P id=y><B id=g>And:</B> You need some actual data for the example. You will 
+have something important—just use that.
+<P><B>Getting started.</B> We want to make a new class and a method that returns 
+DataTable. This method will return the full DataTable. In testing, the 
+application handled one million numbers with only moderate slowdowns.<PRE><B>Program that uses DataTable with DataGridView: C#</B>
+
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
+{
+    public partial class Form1 : Form
+    {
+	<I>/// &lt;summary&gt;
+	/// Contains column names.
+	/// &lt;/summary&gt;</I>
+	List&lt;string&gt; _names = new List&lt;string&gt;();
+
+	<I>/// &lt;summary&gt;
+	/// Contains column data arrays.
+	/// &lt;/summary&gt;</I>
+	List&lt;double[]&gt; _dataArray = new List&lt;double[]&gt;();
+
+	public Form1()
+	{
+	    InitializeComponent();
+
+	    <I>// Example column.</I>
+	    _names.Add("Cat");
+	    <I>// Three numbers of cat data</I>
+	    _dataArray.Add(new double[]
+	    {
+		1.0,
+		2.2,
+		3.4
+	    });
+
+	    <I>// Another example column</I>
+	    _names.Add("Dog");
+	    <I>// Add three numbers of dog data</I>
+	    _dataArray.Add(new double[]
+	    {
+		3.3,
+		5.0,
+		7.0
+	    });
+	    <I>// Render the DataGridView.</I>
+	    dataGridView1.DataSource = GetResultsTable();
+	}
+
+	<I>/// &lt;summary&gt;
+	/// This method builds a DataTable of the data.
+	/// &lt;/summary&gt;</I>
+	public DataTable GetResultsTable()
+	{
+	    <I>// Create the output table.</I>
+	    DataTable d = new DataTable();
+
+	    <I>// Loop through all process names.</I>
+	    for (int i = 0; i &lt; this._dataArray.Count; i++)
+	    {
+		<I>// The current process name.</I>
+		string name = this._names[i];
+
+		<I>// Add the program name to our columns.</I>
+		d.Columns.Add(name);
+
+		<I>// Add all of the memory numbers to an object list.</I>
+		List&lt;object&gt; objectNumbers = new List&lt;object&gt;();
+
+		<I>// Put every column's numbers in this List.</I>
+		foreach (double number in this._dataArray[i])
+		{
+		    objectNumbers.Add((object)number);
+		}
+
+		<I>// Keep adding rows until we have enough.</I>
+		while (d.Rows.Count &lt; objectNumbers.Count)
+		{
+		    d.Rows.Add();
+		}
+
+		<I>// Add each item to the cells in the column.</I>
+		for (int a = 0; a &lt; objectNumbers.Count; a++)
+		{
+		    d.Rows[a][i] = objectNumbers[a];
+		}
+	    }
+	    return d;
+	}
+    }
+}</PRE>
+<H2>Form</H2><IMG alt=Squares 
+src="C%23%20DataTable%20Examples_files/squares-3.png" width=183 height=371>
+<P>The above code is an entire Form and can be dropped into a Windows Forms 
+application with a DataGridView in the designer. The two arrays are initialized 
+in the class and in the constructor. They contain column information.
+<P><B>In the above code,</B> we create a new DataTable. This is populated with 
+data and put into the DataGrid. There are more efficient ways of modifying 
+existing DataTables. By changing an existing one, you could avoid excess 
+allocations.
+<P><B>Loop through columns.</B> We have a collection that contains many arrays. 
+Each of those arrays needs to be a new column. So the main for-loop in the above 
+code goes through the data we want to put in each column.
+<P id=y><B id=e>Note:</B> This site has more information about looping through 
+the rows and cells in the DataTable type.</P><A id=y 
+href="http://www.dotnetperls.com/datatable-foreach">DataTable Foreach 
+Loop</A><IMG alt=Note src="C%23%20DataTable%20Examples_files/note.png" width=131 
+height=175>
+<P><B>Add columns by name.</B> We add the column names to the DataTable. This 
+can be the data series type, such as "name", "number" or "id". These are the 
+column headers, which must be added with Columns.Add.
+<P id=y><B id=i>Tip:</B> DataTable requires object arrays to assign to the 
+cells. Object arrays hold any derived type.</P><IMG 
+alt="Warning: exclamation mark" 
+src="C%23%20DataTable%20Examples_files/exclamation.png" width=170 height=175>
+<P><B>We keep adding rows</B> until we have enough to contain all the data 
+points in our array. If we don't add empty rows, the runtime will throw an 
+exception. Right after this step, we assign the cells.
+<P><B>We set each cell</B> in this column to its data value. Please be careful 
+with the indexer syntax on the DataTable—make sure there are enough rows. We 
+directly use our object list that we converted.
+<H2>DataSource</H2><IMG alt="Framework: NET" 
+src="C%23%20DataTable%20Examples_files/net.png" width=240 height=91>
+<P>Here we assign the DataSource of a DataGridView directly to the result value. 
+We use the built-in display logic. For Windows Forms, DataSource provides better 
+display performance than trying to individually add elements.
+<P id=y><B id=i>Tip:</B> Sometimes it is helpful to assign DataSource to null to 
+clear it. I am unsure why this step is required.<PRE><B>Example code that sets DataSource: C#</B>
+
+<I>//
+// Draw new cells on DataGridView.
+//</I>
+dataGridView1.DataSource = null;
+dataGridView1.DataSource = GetResultsTable();</PRE>
+<H2>Convert List</H2><IMG alt="Convert or change" 
+src="C%23%20DataTable%20Examples_files/convert.png" width=250 height=104>
+<P>The List type is often useful. The DataTable type is better for when you are 
+interacting with controls such as the DataGridView or with SQL databases. It is 
+sometimes a good idea to convert your List into a DataTable.
+<P id=y><B id=e>Note:</B> A custom method may need to be developed for each 
+DataTable and List conversion needed.</P><A id=y 
+href="http://www.dotnetperls.com/convert-list-datatable">Convert List, 
+DataTable</A>
+<H2>Rows, columns</H2><IMG alt=Logo 
+src="C%23%20DataTable%20Examples_files/logo.png" width=250 height=212>
+<P>The two most important parts of DataTable are its Rows and Columns 
+collections. Use the instance Add method to add to either of these collections. 
+We look also into the types' internal representations.
+<P id=y><B id=i>Tip:</B> There is more information, including many examples, of 
+using DataRow and DataColumn collections on this site.</P><A id=y 
+href="http://www.dotnetperls.com/datarow">DataRow</A> <A id=y 
+href="http://www.dotnetperls.com/datacolumn">DataColumn</A>
+<P id=y><B>DataSet:</B> You can combine multiple DataTable instances into one 
+collection by using the DataSet type. This provides useful functionality.</P><A 
+id=y href="http://www.dotnetperls.com/dataset">DataSet Examples</A>
+<P id=y><B>DataView:</B> One useful way to manipulate your DataTable's 
+representation is to sort it using DataView. The DataView has a Sort 
+property.</P><A id=y href="http://www.dotnetperls.com/dataview">DataView 
+Examples</A>
+<H2>Select</H2><IMG alt="Select method call" 
+src="C%23%20DataTable%20Examples_files/select.png" width=250 height=86>
+<P>You can use the Select method on the DataTable. This filters elements based 
+on some criteria. You receive an array of DataRow instances that match your 
+filter. The filter is specified in string format.</P><A 
+href="http://www.dotnetperls.com/datatable-select">DataTable Select</A>
+<H2>Using</H2><IMG alt="Using keyword" 
+src="C%23%20DataTable%20Examples_files/using.png" width=212 height=86>
+<P>DataTable can be placed in a using statement. But is this worthwhile? Often 
+the using block construct helps improve resource management in programs. We show 
+the using statement wrapping a DataTable.
+<P id=y><B id=i>Tip:</B> You can add Columns and Rows to the DataTable instance 
+inside, but not outside, the using block.<PRE><B>Program that uses using statement: C#</B>
+
+using System;
+using System.Data;
+
+class Program
+{
+    static void Main()
+    {
+	<U>using</U> (DataTable table = new DataTable())
+	{
+	    table.Columns.Add("Name", typeof(string));
+	    table.Columns.Add("Date", typeof(DateTime));
+
+	    table.Rows.Add("cat", DateTime.Now);
+	    table.Rows.Add("dog", DateTime.Today);
+	}
+    }
+}</PRE>
+<P><B>In this example,</B> the Dispose method is invoked. After the using 
+statement, the Dispose method on DataTable is called. This method is implemented 
+on the base class for DataTable: MarshalValueByComponent.</P><A 
+href="http://www.dotnetperls.com/using">Using</A><IMG 
+src="C%23%20DataTable%20Examples_files/question.png" width=107 height=154>
+<P><B>Worthwhile?</B> Is enclosing the DataTable inside a using statement 
+worthwhile? When Dispose is called, native resources from 
+MarshalValueByComponent (a base class of DataTable) are released. This may be 
+helpful.
+<P id=y><B id=t>Therefore:</B> It is possible that the using statement could 
+alleviate some resource usage problems.
+<P id=y><B id=g>Also:</B> The using-statement is good coding hygiene for 
+DataTables. It is recommended if your program has any possible memory issues.
+<H2>Summary</H2><A id=a href="http://www.dotnetperls.com/data"><IMG alt=Summary 
+src="C%23%20DataTable%20Examples_files/summary.png" width=252 height=90></A>
+<P>We used DataTable in several C# programs. To it we added data, in the form of 
+columns and rows. This code is effective when storing more than one million data 
+points and rendering them every three seconds. It is efficient.
+<P id=y><B id=i>Tip:</B> DataTable is faster in Windows Forms than manually 
+adding rows. It reduces complexity.<FORM action=http://www.google.com/search><INPUT type=hidden value=dotnetperls.com name=sitesearch><INPUT name=q><INPUT type=submit value=Go>
+<A href="http://www.dotnetperls.com/">C#</A>: <A href="http://www.dotnetperls.com/data">Data</A></FORM></P>
+<DIV id=q>
+<SCRIPT>google_ad_client="ca-pub-4712093147740724";google_ad_slot="6682575170";google_ad_width=300;google_ad_height=250;</SCRIPT>
+
+<SCRIPT src="C%23%20DataTable%20Examples_files/show_ads.js"></SCRIPT>
+</DIV>
+<DIV id=z>
+<SCRIPT>google_ad_client="ca-pub-4712093147740724";google_ad_slot="4020807141";google_ad_width=300;google_ad_height=250;</SCRIPT>
+
+<SCRIPT src="C%23%20DataTable%20Examples_files/show_ads.js"></SCRIPT>
+</DIV>
+<DIV id=v>
+<SCRIPT>google_ad_client="ca-pub-4712093147740724";google_ad_slot="7895882516";google_ad_width=728;google_ad_height=90;</SCRIPT>
+
+<SCRIPT src="C%23%20DataTable%20Examples_files/show_ads.js"></SCRIPT>
+</DIV>
+<DIV id=w>
+<SCRIPT>google_ad_client="ca-pub-4712093147740724";google_ad_slot="2814286994";google_ad_width=200;google_ad_height=90;</SCRIPT>
+
+<SCRIPT src="C%23%20DataTable%20Examples_files/show_ads.js"></SCRIPT>
+</DIV>
+<DIV id=u>
+<SCRIPT>google_ad_client="ca-pub-4712093147740724";google_ad_slot="1737246071";google_ad_width=200;google_ad_height=90;</SCRIPT>
+
+<SCRIPT src="C%23%20DataTable%20Examples_files/show_ads.js"></SCRIPT>
+</DIV></BODY></HTML>

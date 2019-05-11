@@ -1,0 +1,270 @@
+BODY {
+	BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px
+}
+IMG {
+	BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px
+}
+FORM > A {
+	BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px
+}
+#a {
+	BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px
+}
+BODY {
+	MAX-WIDTH: 960px; MIN-WIDTH: 750px; POSITION: relative; PADDING-BOTTOM: 330px; PADDING-TOP: 0px; FONT: 18px/1.45 verdana; PADDING-LEFT: 0px; MARGIN: 0px auto; MIN-HEIGHT: 999px; PADDING-RIGHT: 0px
+}
+H1 {
+	PADDING-BOTTOM: 12px; PADDING-TOP: 20px; FONT: 42px/1.2 verdana; PADDING-LEFT: 10px; MARGIN: 0px 0px 15px; PADDING-RIGHT: 200px; box-shadow: 0 0 20px 2px #ddd
+}
+H2 {
+	FONT-SIZE: 26px; MARGIN: 0px 10px
+}
+FORM {
+	WHITE-SPACE: pre; RIGHT: 0px; PADDING-BOTTOM: 7px; TEXT-ALIGN: right; PADDING-TOP: 7px; PADDING-LEFT: 9px; MARGIN: 0px; TOP: 0px; PADDING-RIGHT: 9px
+}
+FORM > A {
+	COLOR: #000; DISPLAY: inline
+}
+FORM > A:visited {
+	COLOR: #000; DISPLAY: inline
+}
+FORM > A:active {
+	COLOR: #707070
+}
+INPUT {
+	FONT-SIZE: 17px; BORDER-TOP: #777 1px solid; BORDER-RIGHT: #777 1px solid; BACKGROUND: #fff; BORDER-BOTTOM: #777 1px solid; MARGIN: 4px 0px 5px 4px; BORDER-LEFT: #777 1px solid; border-radius: 3px
+}
+INPUT:focus {
+	BACKGROUND: #f8f8f8
+}
+INPUT[value='Go']:hover {
+	BACKGROUND: #ddd
+}
+INPUT[name='q'] {
+	WIDTH: 157px
+}
+P {
+	MARGIN: 0px 310px 12px 10px
+}
+IMG {
+	MARGIN: 0px 310px 12px 10px
+}
+A {
+	DISPLAY: block
+}
+IMG {
+	DISPLAY: block
+}
+#y > B {
+	DISPLAY: block
+}
+A {
+	TEXT-DECORATION: none; MARGIN: -12px 10px 12px
+}
+A {
+	COLOR: #06c
+}
+#p > A {
+	COLOR: #06c
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #808
+}
+A:active {
+	COLOR: red
+}
+#p > A:active {
+	COLOR: red
+}
+#y {
+	MARGIN-LEFT: 40px
+}
+PRE {
+	FONT-SIZE: 16px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 0px; MARGIN: 0px 10px 12px; LINE-HEIGHT: normal; PADDING-RIGHT: 0px
+}
+I {
+	FONT-STYLE: normal
+}
+IMG {
+	FLOAT: right
+}
+#n {
+	FLOAT: none
+}
+IMG {
+	CLEAR: both
+}
+#c {
+	CLEAR: both
+}
+#p {
+	CURSOR: default; TEXT-ALIGN: justify
+}
+#p > A {
+	FONT-WEIGHT: 400; MARGIN: 0px 7px 0px 0px; DISPLAY: inline
+}
+#p > I {
+	FONT-WEIGHT: 400; MARGIN: 0px 7px 0px 0px; DISPLAY: inline
+}
+A {
+	FONT-WEIGHT: 700
+}
+H1 {
+	FONT-WEIGHT: 700
+}
+U {
+	FONT-WEIGHT: 700
+}
+#p > #b {
+	FONT-WEIGHT: 700
+}
+PRE > B {
+	PADDING-BOTTOM: 2px; PADDING-TOP: 2px; PADDING-LEFT: 46px; PADDING-RIGHT: 46px; box-shadow: none; border-radius: 4px
+}
+#o {
+	BACKGROUND: #ff0
+}
+#x {
+	BACKGROUND: aqua
+}
+#e {
+	COLOR: #3cf
+}
+#r {
+	COLOR: #f06
+}
+#t {
+	COLOR: #393
+}
+PRE > I {
+	COLOR: #393
+}
+#i {
+	COLOR: #f90
+}
+#g {
+	COLOR: #888
+}
+DIV {
+	POSITION: absolute
+}
+FORM {
+	POSITION: absolute
+}
+#q {
+	RIGHT: 0px; TOP: 347px
+}
+#z {
+	RIGHT: 0px; TOP: 87px
+}
+#v {
+	LEFT: 10px; BOTTOM: 60px
+}
+#w {
+	LEFT: 10px; BOTTOM: 160px
+}
+#u {
+	RIGHT: 100px; TOP: 603px
+}
+H1 {
+	BACKGROUND: #ff9; box-shadow: 0 0 2px 2px #ff9
+}
+PRE > B {
+	BACKGROUND: #ff9; box-shadow: 0 0 2px 2px #ff9
+}
+#p > I {
+	BACKGROUND: #ff9; box-shadow: 0 0 2px 2px #ff9
+}
+#A > H1 {
+	BACKGROUND: #3cf; box-shadow: 0 0 2px 2px #3cf
+}
+#A > PRE > B {
+	BACKGROUND: #3cf; box-shadow: 0 0 2px 2px #3cf
+}
+#A > #p > I {
+	BACKGROUND: #3cf; box-shadow: 0 0 2px 2px #3cf
+}
+#D > H1 {
+	BACKGROUND: #ccf; box-shadow: 0 0 2px 2px #ccf
+}
+#D > PRE > B {
+	BACKGROUND: #ccf; box-shadow: 0 0 2px 2px #ccf
+}
+#D > #p > I {
+	BACKGROUND: #ccf; box-shadow: 0 0 2px 2px #ccf
+}
+#E > H1 {
+	BACKGROUND: #fbb; box-shadow: 0 0 2px 2px #fbb
+}
+#E > PRE > B {
+	BACKGROUND: #fbb; box-shadow: 0 0 2px 2px #fbb
+}
+#E > #p > I {
+	BACKGROUND: #fbb; box-shadow: 0 0 2px 2px #fbb
+}
+#F > H1 {
+	BACKGROUND: #ddd; box-shadow: 0 0 2px 2px #ddd
+}
+#F > PRE > B {
+	BACKGROUND: #ddd; box-shadow: 0 0 2px 2px #ddd
+}
+#F > #p > I {
+	BACKGROUND: #ddd; box-shadow: 0 0 2px 2px #ddd
+}
+#G > H1 {
+	BACKGROUND: #fcf; box-shadow: 0 0 2px 2px #fcf
+}
+#G > PRE > B {
+	BACKGROUND: #fcf; box-shadow: 0 0 2px 2px #fcf
+}
+#G > #p > I {
+	BACKGROUND: #fcf; box-shadow: 0 0 2px 2px #fcf
+}
+#H > H1 {
+	BACKGROUND: #cf9; box-shadow: 0 0 2px 2px #cf9
+}
+#H > PRE > B {
+	BACKGROUND: #cf9; box-shadow: 0 0 2px 2px #cf9
+}
+#H > #p > I {
+	BACKGROUND: #cf9; box-shadow: 0 0 2px 2px #cf9
+}
+#I > H1 {
+	BACKGROUND: #cff; box-shadow: 0 0 2px 2px #cff
+}
+#I > PRE > B {
+	BACKGROUND: #cff; box-shadow: 0 0 2px 2px #cff
+}
+#I > #p > I {
+	BACKGROUND: #cff; box-shadow: 0 0 2px 2px #cff
+}
+#J > H1 {
+	BACKGROUND: #fc9; box-shadow: 0 0 2px 2px #fc9
+}
+#J > PRE > B {
+	BACKGROUND: #fc9; box-shadow: 0 0 2px 2px #fc9
+}
+#J > #p > I {
+	BACKGROUND: #fc9; box-shadow: 0 0 2px 2px #fc9
+}
+#K > H1 {
+	BACKGROUND: #bdd; box-shadow: 0 0 2px 2px #bdd
+}
+#K > PRE > B {
+	BACKGROUND: #bdd; box-shadow: 0 0 2px 2px #bdd
+}
+#K > #p > I {
+	BACKGROUND: #bdd; box-shadow: 0 0 2px 2px #bdd
+}
+#L > H1 {
+	BACKGROUND: #6fc; box-shadow: 0 0 2px 2px #6fc
+}
+#L > PRE > B {
+	BACKGROUND: #6fc; box-shadow: 0 0 2px 2px #6fc
+}
+#L > #p > I {
+	BACKGROUND: #6fc; box-shadow: 0 0 2px 2px #6fc
+}
